@@ -1,0 +1,11 @@
+rclick on project
+lclick on properties > C++ compiler > mingw settings > libraries
+add(in this order)
+mingw32
+SDL2main
+SDL2
+SDL_image 
+
+
+next, go to the top and find include paths
+add src and imgs

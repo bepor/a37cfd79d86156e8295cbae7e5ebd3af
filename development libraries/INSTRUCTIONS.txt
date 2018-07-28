@@ -1,0 +1,4 @@
+install mingw for all users with g++ lib in the installer
+navigate to MinGW/bin
+paste the folders in the dev files to bin
+add Mingw/bin to path
