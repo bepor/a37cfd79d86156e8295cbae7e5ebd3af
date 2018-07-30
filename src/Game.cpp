@@ -1,11 +1,11 @@
-#include "game.hpp"
-//#include <iostream>
+#include "game.h"
+#include "texmanager.h"
 //#include <SDL2/SDL.h>
 //#include <SDL2/SDL_image.h>
 
 SDL_Texture* background = NULL;
 SDL_Rect srcR, destR;
-
+int cnt;
 game::game()
 {}
 game::~game()
@@ -38,14 +38,8 @@ void game::init(const char *title, int xpos, int ypos, int width, int height, bo
 		isRunning = false;
 		std::cout << "Something went wrong lol" << std::endl;
 	}
-	//SDL_Surface*tmpsurface = IMG_Load("/imgs/background.jpg");
-	//background = SDL_CreateTextureFromSurface(renderer,tmpsurface);
-	//SDL_FreeSurface(tmpsurface);
+	background = TexMgr::LoadTexture("../imgs/background.png",renderer);
 
-
-	/* For images to show, run the exe from file explorer, dont run in eclipse*/
-	background = IMG_LoadTexture(renderer, "../imgs/background.png");
-	std::cout << IMG_GetError() << std::endl;
 }
 void game::handleEvents()
 {
@@ -64,7 +58,8 @@ void game::update()
 {
 	destR.w = 800;
 	destR.h = 600;
-
+	//cnt++;
+	//std::cout << cnt << std::endl;
 }
 void game::render()
 {
